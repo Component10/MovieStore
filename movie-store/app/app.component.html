@@ -12,7 +12,7 @@
 
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a>Top 10</a></li>
+      <li><a>Top 5</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Genres <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu">
@@ -30,15 +30,16 @@
       <div class="form-group">
         <input class="form-control" placeholder="Search" type="text">
       </div>
-      <button type="submit" class="btn btn-default">Log in</button>
-      <button type="submit" class="btn btn-default">Sign up</button>
+      <a [routerLink]="['/login']" href=""><button type="submit" class="btn btn-default">Log in</button></a>
+      <a [routerLink]="['/sign-up']" href=""><button type="submit" class="btn btn-default">Sign up</button></a> 
     </form>
   </div>
 </div>
 </nav>
-
-<ul>
-  <li *ngFor='let movie of movies| async'>
-    {{movie.Title}}
-  </li>
-</ul>
+<div>
+<main>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+</main>
+</div>

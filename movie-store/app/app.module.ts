@@ -3,7 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
+import { LogInModule } from './login/login.module';
+import { AppRoutingModule } from './app-routing.module';
+import { SignUpModule } from './sign-up/sign-up.module';
+
 import { AppComponent } from './app.component';
+
 import { AppService } from './app.service';
 
 let configAngularFire = {
@@ -14,7 +19,14 @@ let configAngularFire = {
 };
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, AngularFireModule.initializeApp(configAngularFire)],
+    imports: [
+      BrowserModule,
+      HttpModule,
+      AppRoutingModule,
+      AngularFireModule.initializeApp(configAngularFire),
+      SignUpModule,
+      LogInModule
+    ],
     declarations: [AppComponent],
     providers: [AppService],
     bootstrap: [AppComponent]

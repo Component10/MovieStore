@@ -9,7 +9,7 @@ import { AppService } from './app.service';
     templateUrl: './app.component.html'
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   movies: FirebaseListObservable<any[]>;
 
   constructor(private af : AngularFire, private appService: AppService) {}
