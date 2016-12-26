@@ -1,0 +1,16 @@
+<div class="container" *ngFor="let movie of movies | async">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ movie.Title }}</h2>
+        <button class="btn btn-success btn-md pull-left" (click)="showDetails()">Show Details</button>
+        <div class="details" [hidden]='showMovieDetails'>
+          <p>{{ movie.Actors }}</p>
+        </div>
+      </div>
+      <div class=" pull-right image-container">
+          <img src='{{movie.Poster}}'>
+      </div>
+    </div>
+    </div>
+  </div>

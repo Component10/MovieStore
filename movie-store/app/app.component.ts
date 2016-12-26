@@ -12,9 +12,9 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
   movies: FirebaseListObservable<any[]>;
 
-  constructor(private af : AngularFire, private appService: AppService) {}
+  constructor(private af: AngularFire, private appService: AppService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.movies = this.appService.getAllMovies(this.af);
   }
 }
