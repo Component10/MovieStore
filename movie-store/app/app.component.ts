@@ -8,13 +8,8 @@ import { UserService } from './user/user.service';
 })
 
 export class AppComponent {
-  isLogged: boolean;
 
-  constructor(private user: UserService) {
-    this.isLogged = this.user.isLogged();
-
-    console.log(this.isLogged);
-  }
+  constructor(private user: UserService) {  }
 
   CheckIfItIsLogged(): any {
     return this.user.isLogged();

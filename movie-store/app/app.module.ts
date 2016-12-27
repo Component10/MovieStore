@@ -4,11 +4,7 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { configAngularFire } from '../config/angular-fire.ts';
 
-import { LogInModule } from './user/login/login.module';
-import { AppRoutingModule } from './app-routing.module';
-import { SignUpModule } from './user/sign-up/sign-up.module';
-import { TopMoviesModule } from './top-movies/top-movies.module';
-import { HomeModule } from './home/home.module';
+import { Modules } from './modules';
 
 import { AppComponent } from './app.component';
 
@@ -20,12 +16,8 @@ const configFirebaseAuth = {
 @NgModule({
     imports: [
       BrowserModule,
-      AppRoutingModule,
       AngularFireModule.initializeApp(configAngularFire, configFirebaseAuth),
-      SignUpModule,
-      LogInModule,
-      TopMoviesModule,
-      HomeModule
+      Modules
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
