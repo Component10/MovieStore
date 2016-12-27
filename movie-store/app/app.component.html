@@ -29,8 +29,9 @@
       <div class="form-group">
         <input class="form-control" placeholder="Search" type="text">
       </div>
-      <a [routerLink]="['/login']" href=""><button type="submit" class="btn btn-default">Log in</button></a>
-      <a [routerLink]="['/sign-up']" href=""><button type="submit" class="btn btn-default">Sign up</button></a>
+      <a *ngIf='!CheckIfItIsLogged()' [routerLink]="['/login']" href=""><button type="submit" class="btn btn-default">Log in</button></a>
+      <a *ngIf='!CheckIfItIsLogged()' [routerLink]="['/sign-up']" href=""><button type="submit" class="btn btn-default">Sign up</button></a>
+      <a *ngIf='CheckIfItIsLogged()'(click)='logout()' href=""><button type="submit" class="btn btn-default">Log out</button></a>
     </form>
   </div>
 </div>

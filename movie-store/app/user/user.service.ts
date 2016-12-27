@@ -4,7 +4,8 @@ import { AngularFire, FirebaseAuth, AuthProviders, AuthMethods } from 'angularfi
 @Injectable()
 
 export class UserService {
-  constructor(private af: AngularFire, private auth: FirebaseAuth) {}
+  constructor(private af: AngularFire) {
+  }
 
   createUser(email: any, password: any) {
     this.af.auth.createUser({ email: email, password: password});
@@ -22,5 +23,19 @@ export class UserService {
 
   logout() {
     this.af.auth.logout();
+  }
+
+  isLogged() {
+    let logged: any;
+
+    this.af.auth.subscribe(user => {
+      logged = user;
+    });
+
+    if (logged === undefined) {
+      logged = false;
+    }
+
+    return logged;
   }
 }
