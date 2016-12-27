@@ -8,10 +8,9 @@ import { LogInModule } from './user/login/login.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SignUpModule } from './user/sign-up/sign-up.module';
 import { TopMoviesModule } from './top-movies/top-movies.module';
+import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
-
-import { AppService } from './app.service';
 
 const configFirebaseAuth = {
   provider: AuthProviders.Password,
@@ -25,10 +24,10 @@ const configFirebaseAuth = {
       AngularFireModule.initializeApp(configAngularFire, configFirebaseAuth),
       SignUpModule,
       LogInModule,
-      TopMoviesModule
+      TopMoviesModule,
+      HomeModule
     ],
     declarations: [AppComponent],
-    providers: [AppService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
