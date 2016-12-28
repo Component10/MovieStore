@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+
+import { Validator } from '../../utils/validator';
 import { UserService } from '../user.service';
+import { NotificationsService  } from 'angular2-notifications';
 
 @Component({
   selector: 'sign-up',
@@ -8,15 +11,30 @@ import { UserService } from '../user.service';
 })
 
 export class SignUpComponent {
-  constructor(private user: UserService) {}
+  private validator: any;
+
+  public options = {
+    timeOut: 5000,
+    showProgressBar: true,
+    pauseOnHover: false,
+    clickToClose: false,
+    maxLength: 500
+  };
+
+  constructor(private user: UserService, private notificationService: NotificationsService) {
+    this.validator = new Validator();
+  }
 
   signUp() {
     let email = (<HTMLInputElement>document.getElementById('inputEmail')).value.toString(),
         password = (<HTMLInputElement>document.getElementById('inputPassword')).value.toString();
 
-    this.user.createUser(email, password);
+    if (!this.validator.passwordGreaterThenSix(password)) {
+      this.notificationService.error('Error', 'Password must be greater then 6 symbols.');
 
-    console.log('Email : ' + email);
-    console.log('Password: ' + password);
+      return;
+    }
+
+    this.user.createUser(email, password);
   }
 }
