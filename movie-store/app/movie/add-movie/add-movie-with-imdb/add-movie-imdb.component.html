@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="jumbotron" style="width: 800px">
+    <div class="row">
+      <div class="col-md-6">
+       <form class="form-horizontal" name="newActorsForm">
+          <h1>Add Movie </h1>
+            <fieldset>
+              <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Enter the imdb id or name of the movie</label>
+                  <div class="col-lg-10">
+                     <input class="form-control form-validation" required="required" id="id" placeholder="ImdbId or Name" type="text" />
+                  </div>
+              </div>
+
+            </fieldset>
+        </form>
+      <button class="btn btn-default">Cancel</button>
+      <button class="btn btn-primary" (click)="show()">show</button>
+    </div>
+  </div>
+ </div>
+</div>

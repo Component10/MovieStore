@@ -4,6 +4,7 @@ import { SignUpModule } from './user/sign-up/sign-up.module';
 import { TopMoviesModule } from './top-movies/top-movies.module';
 import { HomeModule } from './home/home.module';
 import { AddMovieModule } from './movie/add-movie/add-movie.module';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 export const Modules = [
       LogInModule,
@@ -11,5 +12,7 @@ export const Modules = [
       SignUpModule,
       TopMoviesModule,
       HomeModule,
-      AddMovieModule
+      AddMovieModule,
+      HttpModule,
+      JsonpModule
 ];
