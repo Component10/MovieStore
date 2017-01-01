@@ -1,8 +1,7 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AddMovieImdbService } from './add-movie-imdb.service';
 
-declare var $: any;
 
 @Component({
   selector: 'add-movie-imdb',
@@ -11,21 +10,19 @@ declare var $: any;
 
 export class AddMovieImdbComponent {
 
-  constructor(private movie: AddMovieImdbService, private elRef: ElementRef) {}
+  public options = {
+    timeOut: 5000,
+    showProgressBar: true,
+    pauseOnHover: false,
+    clickToClose: false,
+    maxLength: 500
+  };
 
-  show() {
+  constructor(private movie: AddMovieImdbService) {}
+
+  add() {
     let id = (<HTMLInputElement>document.getElementById('id')).value.toString();
 
-        $.ajax({
-          url: 'http://imdb.wemakesites.net/api/' + id + '?api_key=83b2cdd9-b220-4525-b732-391d34e47fa6',
-          crossDomain: true,
-          data: {
-            api_key: '83b2cdd9-b220-4525-b732-391d34e47fa6'
-          },
-          dataType: 'jsonp',
-          success: function(data: any) {
-            console.log(data);
-          }
-        });
+    this.movie.getMovie(id);
   }
 }

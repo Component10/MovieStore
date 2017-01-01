@@ -15,7 +15,8 @@ const routes: Routes =  [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'top-movies', component: TopMoviesComponent },
   { path: 'add-movie', component: AddMovieComponent },
-  { path: 'add-movie-with-imdb', component: AddMovieImdbComponent}
+  { path: 'add-movie-with-imdb', component: AddMovieImdbComponent },
+  { path: 'genres', loadChildren: 'app/genres/genres.module#GenresModule' }
 ];
 
 @NgModule({

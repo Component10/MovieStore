@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AddMovieComponent } from './add-movie.component';
 import { AddMovieImdbComponent } from './add-movie-with-imdb/add-movie-imdb.component';
@@ -8,7 +9,7 @@ import { AddMovieImdbService } from './add-movie-with-imdb/add-movie-imdb.servic
 import { SimpleNotificationsModule, NotificationsService  } from 'angular2-notifications';
 
 @NgModule({
-  imports: [ SimpleNotificationsModule ],
+  imports: [ SimpleNotificationsModule, RouterModule],
   declarations: [ AddMovieComponent, AddMovieImdbComponent ],
   providers: [ MovieService, NotificationsService, AddMovieImdbService ]
 })

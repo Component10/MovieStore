@@ -2,8 +2,10 @@
 
 import { Injectable } from '@angular/core';
 
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { MovieService } from '../../movie.service';
+import { NotificationsService  } from 'angular2-notifications';
+
+declare var $: any;
 
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
@@ -11,27 +13,18 @@ import 'rxjs/Rx';
 @Injectable()
 
 export class AddMovieImdbService {
-   constructor(private http: Http) {}
 
-   getMovies(id: string) {
-     let url = 'http://imdb.wemakesites.net/api/' + id + '?api_key=83b2cdd9-b220-4525-b732-391d34e47fa6';
-     //'http://www.omdbapi.com/?i=' + id + 'plot=short&r=json';
+   constructor(private movieService: MovieService, private notificationService: NotificationsService) {}
 
-     let movie: any;
+   getMovie(id: string) {
+     $.ajax({
+       url: 'http://www.omdbapi.com/?i=' + id + '&plot=short&r=json',
+       crossDomain: true,
+       dataType: 'json'
+     }).then(data => {
+       this.movieService.addMovie(data);
 
-    /*return this.jsonp.request(url, { method: 'Get'})
-                  .map(mv => movie = mv);*/
-      console.log('HERE');
-
-
-     return this.http.get(url).map(this.extractData);
-
-     //return movie;
-   }
-
-   private extractData(res: Response) {
-     let body = res.json();
-
-     return body;
+       this.notificationService.success('Movie', 'The movie was added to our database.');
+     });
    }
 }
