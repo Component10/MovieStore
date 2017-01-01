@@ -5,6 +5,7 @@ import { TopMoviesModule } from './top-movies/top-movies.module';
 import { HomeModule } from './home/home.module';
 import { AddMovieModule } from './movie/add-movie/add-movie.module';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { GenresModule } from './genres/genres.module';
 
 export const Modules = [
       LogInModule,
@@ -14,5 +15,6 @@ export const Modules = [
       HomeModule,
       AddMovieModule,
       HttpModule,
-      JsonpModule
+      JsonpModule,
+      GenresModule
 ];

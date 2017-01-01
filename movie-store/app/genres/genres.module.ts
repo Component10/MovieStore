@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
+import { ActionComponent } from './action/action.component';
+
 @NgModule({
-  imports: [],
-  declarations: [],
+  declarations: [ ActionComponent ],
   providers: []
 })
 

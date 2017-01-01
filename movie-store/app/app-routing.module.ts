@@ -7,6 +7,7 @@ import { TopMoviesComponent } from './top-movies/top-movies.component';
 import { HomeComponent } from './home/home.component';
 import { AddMovieComponent } from './movie/add-movie/add-movie.component';
 import { AddMovieImdbComponent } from './movie/add-movie/add-movie-with-imdb/add-movie-imdb.component';
+import { ActionComponent } from './genres/action/action.component';
 
 const routes: Routes =  [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -16,7 +17,7 @@ const routes: Routes =  [
   { path: 'top-movies', component: TopMoviesComponent },
   { path: 'add-movie', component: AddMovieComponent },
   { path: 'add-movie-with-imdb', component: AddMovieImdbComponent },
-  { path: 'genres', loadChildren: 'app/genres/genres.module#GenresModule' }
+  { path: 'genres/action', component: ActionComponent }
 ];
 
 @NgModule({
