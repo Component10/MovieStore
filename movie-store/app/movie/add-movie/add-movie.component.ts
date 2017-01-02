@@ -33,12 +33,12 @@ export class AddMovieComponent {
         genre = (<HTMLInputElement>document.getElementById('genre')).value.toString(),
         runtime = (<HTMLInputElement>document.getElementById('runtime')).value.toString();
 
-    if (!this.validator.isEmpty(title)
-        || !this.validator.isEmpty(poster)
-        || !this.validator.isEmpty(released)
-        || !this.validator.isEmpty(actors)
-        || !this.validator.isEmpty(genre)
-        || !this.validator.isEmpty(runtime)) {
+    if (this.validator.isEmpty(title)
+        || this.validator.isEmpty(poster)
+        || this.validator.isEmpty(released)
+        || this.validator.isEmpty(actors)
+        || this.validator.isEmpty(genre)
+        || this.validator.isEmpty(runtime)) {
 
       this.notificationService.error('Error', 'All fields must be filled in');
 
@@ -55,5 +55,7 @@ export class AddMovieComponent {
     };
 
     this.movie.addMovie(movie);
+
+    this.notificationService.success('Successful!', 'You add a movie.');
   }
 }

@@ -3,11 +3,11 @@ export class Validator  {
   constructor() {}
 
   isEmpty(value: string): boolean {
-      if (value.length < 0) {
-        return false;
+      if (value.length === 0) {
+        return true;
       }
 
-      return true;
+      return false;
   };
 
   passwordGreaterThenSix(pass: string): boolean {

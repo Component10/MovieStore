@@ -29,6 +29,12 @@ export class SignUpComponent {
     let email = (<HTMLInputElement>document.getElementById('inputEmail')).value.toString(),
         password = (<HTMLInputElement>document.getElementById('inputPassword')).value.toString();
 
+    if (this.validator.isEmpty(email)) {
+      this.notificationService.error('Error', 'Please enter a email.');
+
+      return;
+    }
+
     if (!this.validator.passwordGreaterThenSix(password)) {
       this.notificationService.error('Error', 'Password must be greater then 6 symbols.');
 
@@ -36,5 +42,7 @@ export class SignUpComponent {
     }
 
     this.user.createUser(email, password);
+
+    this.notificationService.success('Successful', 'Your sign up is successful.');
   }
 }
