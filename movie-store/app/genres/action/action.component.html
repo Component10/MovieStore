@@ -1,17 +1,17 @@
-<div class="container">
+<p>Action Movies</p>
+<div class="container" *ngFor="let actionMovie of actionMovies">
   <div class="jumbotron">
     <div class="row">
       <div class="col-md-6">
-        <h2>Title</h2>
-        <button class="btn btn-success btn-md pull-left">Show Details</button>
-        <div class="details">
-          <p>Actors</p>
+        <h2>{{ actionMovie.Title }}</h2>
+        <div class="details" [hidden]='showMovieDetails'>
+          <h3>Actors : <p>{{ actionMovie.Actors }}</p></h3>
+          <h3>Release date : <p>{{ actionMovie.Released }}</h3>
         </div>
       </div>
       <div class=" pull-right image-container">
-          IMG
+          <img src='{{ actionMovie.Poster }}'>
       </div>
     </div>
-    <button class="btn btn-default" (click)='show()'>Show</button>
     </div>
   </div>

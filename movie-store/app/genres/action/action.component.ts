@@ -8,9 +8,11 @@ import { GenresService } from '../genres.service';
 })
 
 export class ActionComponent {
-  constructor(private genres: GenresService) {}
+  loadpage: number = 0;
+  actionMovies: any[];
 
-  show() {
-    this.genres.getActionMovies();
+  constructor(private genres: GenresService) {
+    this.loadpage += 1;
+    this.actionMovies = this.genres.getActionMovies(this.loadpage);
   }
 }

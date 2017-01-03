@@ -11,27 +11,36 @@ export class GenresService {
     this.movies = this.af.database.list('/movies', { preserveSnapshot: true });
   }
 
-  getActionMovies() {
+  public getActionMovies(loadpage: number): any[] {
+    let actionMovies: any[] = [];
+
     this.movies.subscribe(movies => {
       movies.forEach(movie => {
-        console.log(movie.key + ' : ' + movie.val().Title );
+        if (movie.val().Genre !== undefined && loadpage === 1) {
+          if (movie.val().Genre.indexOf('Action') !== -1) {
+            actionMovies.push(movie.val());
+          };
+        }
       });
+      console.log('Movies : ' + movies.length + ' Action Movies : ' + actionMovies.length + ' Load page : ' + loadpage);
     });
+
+    return actionMovies;
   }
 
-  getAdventureMovies() {
-
-  }
-
-  getAnimationMovies() {
-
-  }
-
-  getComedyMovies() {
+  public getAdventureMovies() {
 
   }
 
-  getGrimeMovies() {
+  public getAnimationMovies() {
+
+  }
+
+  public getComedyMovies() {
+
+  }
+
+  public getGrimeMovies() {
 
   }
 }
