@@ -1,0 +1,17 @@
+<p>Adventure Movies</p>
+<div class="container" *ngFor="let adventureMovie of adventureMovies">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ adventureMovies.Title }}</h2>
+        <div class="details">
+          <h3>Actors : <p>{{ adventureMovie.Actors }}</p></h3>
+          <h3>Release date : <p>{{ adventureMovie.Released }}</h3>
+        </div>
+      </div>
+      <div class=" pull-right image-container">
+          <img src='{{ adventureMovie.Poster }}'>
+      </div>
+    </div>
+    </div>
+  </div>

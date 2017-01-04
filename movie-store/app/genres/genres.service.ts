@@ -29,7 +29,19 @@ export class GenresService {
   }
 
   public getAdventureMovies() {
+    let adventureMovies: any[] = [];
 
+    this.movies.subscribe(movies => {
+      movies.forEach(movie => {
+        if (movie.val().Genre !== undefined) {
+          if (movie.val().Genre.indexOf('Adventure') !== -1) {
+            adventureMovies.push(movie.val());
+          }
+        }
+      });
+    });
+
+    return adventureMovies;
   }
 
   public getAnimationMovies() {
