@@ -3,13 +3,14 @@
     <div class="row">
       <div class="col-md-6">
         <h2>{{ movie.Title }}</h2>
-        <button class="btn btn-success btn-md pull-left" (click)="showDetails()">Show Details</button>
-        <div class="details" [hidden]='showMovieDetails'>
-          <p>{{ movie.Actors }}</p>
+        <div class="details">
+          <h3>Actors : <p>{{ movie.Actors }}</p></h3>
+          <h3>Release date : <p>{{ movie.Released }}</h3>
+          <h3>Runtime : <p>{{ movie.Runtime }}</h3>
         </div>
       </div>
       <div class=" pull-right image-container">
-          <img src='{{movie.Poster}}'>
+          <img src='{{ movie.Poster }}'>
       </div>
     </div>
     </div>

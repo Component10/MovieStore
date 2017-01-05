@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Validator } from '../../utils/validator';
 import { UserService } from '../user.service';
@@ -21,7 +22,7 @@ export class SignUpComponent {
     maxLength: 500
   };
 
-  constructor(private user: UserService, private notificationService: NotificationsService) {
+  constructor(private user: UserService, private notificationService: NotificationsService, private router: Router) {
     this.validator = new Validator();
   }
 

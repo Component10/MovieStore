@@ -7,7 +7,6 @@
        <form class="form-horizontal" name="newActorsForm">
           <h1>Add Movie </h1>
             <fieldset>
-              <legend>Main Information</legend>
               <div class="form-group">
                 <label for="name" class="col-lg-2 control-label">Title</label>
                   <div class="col-lg-10">
@@ -48,7 +47,6 @@
       </form>
       <button class="btn btn-default">Cancel</button>
       <button class="btn btn-primary" (click)="add()">Add</button>
-      <p>you can add a movie from imdb</p>
       <a [routerLink]="['/add-movie-with-imdb']">
         <button class="btn btn-primary">Add with imdb</button>
       </a>

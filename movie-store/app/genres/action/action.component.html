@@ -1,4 +1,3 @@
-<p>Action Movies</p>
 <div class="container" *ngFor="let actionMovie of actionMovies">
   <div class="jumbotron">
     <div class="row">
@@ -7,6 +6,7 @@
         <div class="details" [hidden]='showMovieDetails'>
           <h3>Actors : <p>{{ actionMovie.Actors }}</p></h3>
           <h3>Release date : <p>{{ actionMovie.Released }}</h3>
+          <h3>Runtime : <p>{{ actionMovie.Runtime }}</h3>
         </div>
       </div>
       <div class=" pull-right image-container">
