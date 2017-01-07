@@ -9,6 +9,9 @@ import { AddMovieComponent } from './movie/add-movie/add-movie.component';
 import { AddMovieImdbComponent } from './movie/add-movie/add-movie-with-imdb/add-movie-imdb.component';
 import { ActionComponent } from './genres/action/action.component';
 import { AdventureComponent } from './genres/adventure/adventure.component';
+import { AnimationComponent } from './genres/animation/animation.component';
+import { ComedyComponent } from './genres/comedy/comedy.component';
+import { CrimeComponent } from './genres/crime/crime.component';
 
 const routes: Routes =  [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -19,7 +22,10 @@ const routes: Routes =  [
   { path: 'add-movie', component: AddMovieComponent },
   { path: 'add-movie-from-imdb', component: AddMovieImdbComponent },
   { path: 'genres/action', component: ActionComponent },
-  { path: 'genres/adventure', component: AdventureComponent }
+  { path: 'genres/adventure', component: AdventureComponent },
+  { path: 'genres/animation', component: AnimationComponent },
+  { path: 'genres/comedy', component: ComedyComponent },
+  { path: 'genres/crime', component: CrimeComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,17 @@
+<div class="container" *ngFor="let animationMovie of animationMovies">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ animationMovie.Title }}</h2>
+        <div class="details">
+          <h3>Actors : <p>{{ animationMovie.Actors }}</p></h3>
+          <h3>Release date : <p>{{ animationMovie.Released }}</h3>
+          <h3>Runtime : <p>{{ animationMovie.Runtime }}</h3>
+        </div>
+      </div>
+      <div class=" pull-right image-container">
+          <img src='{{ animationMovie.Poster }}'>
+      </div>
+    </div>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+<div class="container" *ngFor="let crimeMovie of crimeMovies">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ crimeMovie.Title }}</h2>
+        <div class="details">
+          <h3>Actors : <p>{{ crimeMovie.Actors }}</p></h3>
+          <h3>Release date : <p>{{ crimeMovie.Released }}</h3>
+          <h3>Runtime : <p>{{ crimeMovie.Runtime }}</h3>
+        </div>
+      </div>
+      <div class=" pull-right image-container">
+          <img src='{{ crimeMovie.Poster }}'>
+      </div>
+    </div>
+    </div>
+  </div>

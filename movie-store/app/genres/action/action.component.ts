@@ -11,6 +11,6 @@ export class ActionComponent {
   actionMovies: any[];
 
   constructor(private af: AngularFire, private genres: GenresService) {
-    this.actionMovies = this.genres.getActionMovies();
+    this.actionMovies = this.genres.getSpecificMovies('Action');
   }
 }

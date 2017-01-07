@@ -11,6 +11,6 @@ export class AdventureComponent {
   adventureMovies: any[];
 
   constructor(private genres: GenresService) {
-    this.adventureMovies = this.genres.getAdventureMovies();
+    this.adventureMovies = this.genres.getSpecificMovies('Adventure');
   }
 }
